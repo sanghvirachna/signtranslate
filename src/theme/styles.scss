@@ -1,0 +1,52 @@
+@import './material.scss';
+@import 'fonts/roboto.css';
+
+.container {
+  width: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Remove shadow from material header
+.header-md::after {
+  bottom: -1px;
+  height: 1px;
+}
+
+body {
+  --mdc-typography-button-letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  background-color: white;
+
+  --app-divider-color: rgba(0, 0, 0, 0.12);
+  --app-tinted-background-color: #fafafa; /* map-get(mat.$grey-palette, 50); */
+
+  @media (prefers-color-scheme: dark) {
+    background-color: black !important;
+
+    --app-divider-color: rgba(255, 255, 255, 0.12);
+    --app-tinted-background-color: #151515;
+  }
+
+  &.embed {
+    ion-header,
+    #input-mode-group,
+    app-send-feedback {
+      display: none !important;
+    }
+  }
+}
+
+.actions-row {
+  position: absolute;
+  margin: 14px;
+  bottom: 0;
+  right: 0;
+  text-align: end;
+  width: calc(100% - 2 * 14px);
+}
+
+@import './ionic-variables';
+@import './ionic';

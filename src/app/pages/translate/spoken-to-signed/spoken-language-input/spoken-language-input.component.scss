@@ -1,0 +1,62 @@
+.translation-text {
+  position: relative;
+  height: 100%;
+  padding: 20px 24px;
+  flex: 1;
+
+  > div {
+    display: flex;
+  }
+}
+
+#spoken-language-label {
+  display: none;
+}
+
+textarea#desktop {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  direction: unset; /* Important for initial cursor position */
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  resize: none;
+  outline: none;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+#char-count {
+  flex-grow: 1;
+  align-self: center;
+  text-align: end;
+  font-size: 12px;
+  line-height: 40px;
+  padding-inline: 10px;
+  white-space: nowrap;
+}
+
+/* Numbers should always be left-to-right */
+::ng-deep html[dir='rtl'] #char-count {
+  direction: ltr;
+  text-align: start !important;
+}
+
+ion-textarea#mobile {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 20px;
+  --padding-start: 10px;
+  --highlight-color: var(--ion-color-primary);
+
+  &.sc-ion-textarea-ios-h {
+    /* Address strange height on iOS */
+    min-height: initial;
+
+    background-color: white;
+    @media (prefers-color-scheme: dark) {
+      background-color: #202124;
+    }
+  }
+}
